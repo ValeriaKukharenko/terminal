@@ -1,0 +1,91 @@
+Terminal
+
+1) Посмотреть где я:
+$ pwd
+
+2) Создать папку:
+$ mkdir task1
+
+3) Зайти в папку:
+$ cd task1
+
+4) Создать 3 папки:
+$ mkdir v1 v2 v3
+
+5) Зайти в любую папку:
+$ cd v2
+
+6) Создать 5 файлов (3 txt, 2 json):
+$ touch bugs.txt notes.txt checklist.txt file_1.json file_2.json
+
+7) Создать 3 папки:
+$ mkdir project json_files other
+
+8. Вывести список содержимого папки:
+$ ls -la (-l, -r)
+
+9) + Открыть любой txt файл: 
+$ cat > notes.txt (на редактирование)
+$ cat notes.txt (на просмотр)
+
+10) + написать туда что-нибудь, любой текст:
+Manager - Matvey
+QA Lead - Julia
+Mentor - Kirill
+
+11) + сохранить и выйти: 
+crtl+c 
+
+12) Выйти из папки на уровень выше: 
+$ cd ..
+
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку: 
+$ mv bugs.txt checklist.txt project
+
+$ mv folder1/doc11.txt folder2/file5.txt ./ (несколько файлов из двух разных папок переместить в папку на уровень выше)
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку: 
+$ cp file_1.json file_2.json json_files
+
+15) Найти файл: 
+$ find . -name file_1.json (по имени)
+$ find . -name *.png (по формату файлов)
+$ find . -type d -name "other*" (по директориям)
+
+16) просмотреть содержимое в реальном времени (команда grep): 
+$ grep test other/notes.txt
+$ grep -i test notes.txt (независимо от регистра)
+$ grep -v 1 notes.txt (исключение запроса - 1)
+$ grep -ic test notes.txt (независимо от регистра выводим кол-во строк)
+$ grep -R test other (поиска текста внутри папки other)
+
+17) вывести несколько первых строк из текстового файла:  
+$ head -2 notes.txt (вывод 2 первых строк)
+
+18) вывести несколько последних строк из текстового файла: 
+$ tail notes.txt
+
+19) просмотреть содержимое длинного файла (команда less):
+$ less doc2.txt
+/вводим текст для поиска 
+(Ctrl + c, чтобы прервать и q, чтобы выйти из представления)
+20) вывести дату и время:
+$ date
+
+21) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+$ curl http://162.55.220.72:5006/get_method?name=Valeria&age=23
+
+22) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+#!/bin/bash
+
+cd practise_HW
+mkdir v1 v2 v3
+cd v2
+touch bugs.txt notes.txt checklist.txt file_1.json file_2.json
+mkdir project json_files other
+ls -la
+mv bugs.txt checklist.txt project
+
+Для выполнения скрипта в bash прописать ./script
